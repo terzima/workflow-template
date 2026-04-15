@@ -1,0 +1,40 @@
+---
+featureId: FEATURE_ID_PLACEHOLDER
+version: 1
+status: draft
+createdAt: TIMESTAMP_PLACEHOLDER
+---
+
+# Spec: FEATURE_TITLE_PLACEHOLDER
+
+## Summary
+<!-- Required. One paragraph. What this feature does and why. Be specific about the user problem being solved and the intended outcome. -->
+
+## Functional Requirements
+<!-- Required. Numbered list. Each item: "FR-{N}: {imperative verb} {object}". Minimum 1. Each must be testable. -->
+<!-- Example: FR-1: Allow users to initiate Google OAuth sign-in from the login page -->
+
+## Non-Functional Requirements
+<!-- Required. Format: "NFR-{N}: {category}: {statement}". Minimum 1. -->
+<!-- Categories: Performance, Security, Accessibility, Reliability, Scalability -->
+<!-- Example: NFR-1: Performance: Page load must complete within 2 seconds on a 4G connection -->
+
+## Out of Scope
+<!-- Required. Explicit exclusions. Minimum 1 entry. Prevents scope creep. -->
+<!-- Example: - Password-based authentication (out of scope for this feature) -->
+
+## Acceptance Criteria
+<!-- Required. One AC per FR. Format: "AC-{N} (covers FR-{N}): Given ... When ... Then ..." -->
+<!-- Count must be >= Functional Requirements count. -->
+
+## Open Questions
+<!-- Required section but can be empty list. Items that require human input before implementation can proceed. -->
+<!-- Example: OQ-1: Should users be able to log in with Apple ID in addition to Google? -->
+
+## Dependencies
+<!-- Required. Other features, external services, or infrastructure required. Use "none" if none. -->
+<!-- Example: DEP-1: PostgreSQL users table must exist before implementation -->
+
+## Assumptions
+<!-- Required. Things treated as true without explicit confirmation. Use "none" if none. -->
+<!-- Example: ASM-1: Next-auth v5 will be used as the OAuth library -->

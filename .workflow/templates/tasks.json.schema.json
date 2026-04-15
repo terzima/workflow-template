@@ -1,0 +1,111 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "tasks.json.schema.json",
+  "title": "tasks.json",
+  "description": "Task breakdown artifact produced by the architecture agent",
+  "type": "object",
+  "required": ["featureId", "architectureVersion", "generatedAt", "tasks"],
+  "additionalProperties": false,
+  "properties": {
+    "featureId": {
+      "type": "string",
+      "pattern": "^feat-\\d{4}-.+$",
+      "description": "Must match the active feature ID"
+    },
+    "architectureVersion": {
+      "type": "integer",
+      "minimum": 1,
+      "description": "Version of the architecture.md this task list was generated from"
+    },
+    "generatedAt": {
+      "type": "string",
+      "format": "date-time",
+      "description": "ISO 8601 timestamp"
+    },
+    "tasks": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/definitions/Task"
+      }
+    }
+  },
+  "definitions": {
+    "Task": {
+      "type": "object",
+      "required": [
+        "id",
+        "title",
+        "phase",
+        "status",
+        "dependsOn",
+        "affectedFiles",
+        "contextFiles",
+        "instructions",
+        "acceptanceCriteria",
+        "estimatedComplexity"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^task-\\d{3}$",
+          "description": "Three-digit zero-padded sequential ID within the feature"
+        },
+        "title": {
+          "type": "string",
+          "minLength": 5,
+          "maxLength": 100
+        },
+        "phase": {
+          "type": "string",
+          "enum": ["foundation", "feature", "integration", "cleanup"],
+          "description": "Pipeline phase this task belongs to"
+        },
+        "status": {
+          "type": "string",
+          "enum": ["pending", "in_progress", "done", "blocked"]
+        },
+        "dependsOn": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^task-\\d{3}$"
+          },
+          "description": "IDs of tasks that must complete before this task can start"
+        },
+        "affectedFiles": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "pattern": "^src/",
+            "description": "Must be under src/"
+          },
+          "description": "Files the coding agent is allowed to create or modify"
+        },
+        "contextFiles": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Files the coding agent should read for context (besides the task object itself)"
+        },
+        "instructions": {
+          "type": "string",
+          "minLength": 20,
+          "description": "Actionable, unambiguous instructions for the coding agent"
+        },
+        "acceptanceCriteria": {
+          "type": "string",
+          "minLength": 10,
+          "description": "Verifiable criteria the coding agent's output must meet"
+        },
+        "estimatedComplexity": {
+          "type": "string",
+          "enum": ["small", "medium", "large"]
+        }
+      }
+    }
+  }
+}

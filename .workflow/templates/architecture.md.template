@@ -1,0 +1,48 @@
+---
+featureId: FEATURE_ID_PLACEHOLDER
+specVersion: SPEC_VERSION_PLACEHOLDER
+version: 1
+createdAt: TIMESTAMP_PLACEHOLDER
+---
+
+# Architecture: FEATURE_TITLE_PLACEHOLDER
+
+## Approach
+<!-- Required. One paragraph. The chosen technical approach and why. -->
+
+## Technology Decisions
+<!-- Required. Format: "TD-{N}: {technology/library}: {why chosen over alternatives}" -->
+<!-- Example: TD-1: Auth.js v5: Handles OAuth flow and session management natively in Next.js App Router -->
+
+## Component Map
+<!-- Required. One entry per component being created or significantly modified. -->
+<!-- Use the format below for each component: -->
+
+<!--
+### {ComponentName}
+- **File**: `src/path/to/file.tsx` (create | modify)
+- **Type**: React Server Component | Client Component | API Route | Server Action | Utility | Model | Hook
+- **Responsibility**: What this component does
+- **Inputs**: Props, params, or data it receives
+- **Outputs**: What it renders or returns
+- **Dependencies**: External packages or internal modules it imports
+-->
+
+## Data Flow
+<!-- Required. Numbered steps from user action to final state. -->
+<!-- Example: 1. User clicks button → 2. Server Action called → 3. DB updated → 4. UI revalidated -->
+
+## Files to Create
+<!-- List only NEW files. Format: `path/to/file.ts` — description -->
+<!-- Use "none" if no new files -->
+
+## Files to Modify
+<!-- List only EXISTING files being changed. Format: `path/to/file.ts` — what changes -->
+<!-- Use "none" if no existing files are modified -->
+
+## Environment Variables Required
+<!-- List any new env vars needed. Use "none" if none. -->
+
+## Test Strategy
+<!-- Required. How implementation will be verified beyond the eval gate. -->
+<!-- Include: unit tests, integration tests, manual verification steps -->
