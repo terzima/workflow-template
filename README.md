@@ -1,5 +1,7 @@
 # workflow-template
 
+This is useless now with current models with their much higher quality.
+
 A reusable multi-agent development pipeline for Claude Code. Drop this into any repo to get a structured, traceable feature development workflow.
 
 ## What's included
